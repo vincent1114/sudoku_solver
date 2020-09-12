@@ -18,9 +18,9 @@ def solve(board):
     for i in range(1, 10):
         if valid(board, i, (row, col)):
             board[row][col] = i
-        if solve(board):
-            return True
-        board[row][col] = 0
+            if solve(board):
+                return True
+            board[row][col] = 0
     return False
         
 def print_board(board):
@@ -39,8 +39,8 @@ def valid(board, num, pos):
     if num in board[row]:
         return False
     # check columns
-    for i in range(board):
-        if board[row][i] == num:
+    for i in range(len(board)):
+        if board[i][col] == num:
             return False
     # check squares
     row_st = row // 3
@@ -60,5 +60,6 @@ def find_empty(board):
 if __name__ == "__main__":
     print_board(BOARD)
     solve(BOARD)
+    print("Solved:")
     print_board(BOARD)
     
