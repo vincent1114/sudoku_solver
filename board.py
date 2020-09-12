@@ -26,7 +26,7 @@ def solve(board):
 def print_board(board):
     for i in range (len(board)):
         if i % 3 == 0 and i != 0:
-            print("---------------------- ")
+            print("------------------------")
         for j in range (len(board[i])):
             if j % 3 == 0 and j != 0: 
                 print(" | ", end = "")
@@ -53,7 +53,7 @@ def valid(board, num, pos):
     return True
 def find_empty(board):
     for i in range (len(board)):
-        for j in range(len(board(i))):
+        for j in range(len(board[i])):
             if board[i][j] == 0:
                 return (i, j) #row, col
     return None
